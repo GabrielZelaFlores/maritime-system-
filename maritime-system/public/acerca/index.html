@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es-PE">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Plataforma estática para monitoreo marítimo, alertas, zonas e incidentes SAR en el litoral peruano.">
+    <title>Acerca de | Sistema de Gestión de Embarcaciones</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Menu principal">
+        <a class="brand" href="/">Maritime System</a>
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" data-nav-toggle>Menu</button>
+        <ul class="nav-links" data-nav-links>
+          
+            <li><a href="/" >Inicio</a></li>
+          
+            <li><a href="/embarcaciones/" >Embarcaciones</a></li>
+          
+            <li><a href="/alertas/" >Alertas</a></li>
+          
+            <li><a href="/zonas/" >Zonas</a></li>
+          
+            <li><a href="/incidentes/" >Incidentes SAR</a></li>
+          
+            <li><a href="/acerca/" aria-current="page">Acerca de</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      
+  <section class="page-heading container">
+    <p class="eyebrow">Laboratorio academico</p>
+    <h1>Acerca de</h1>
+    <p>Informacion del laboratorio y del equipo.</p>
+  </section>
+
+  <section class="container section content-page">
+    <aside class="info-card">
+  <h2>Laboratorio 04</h2>
+  <p>Implementacion de un sitio estatico con Hugo Framework para simular la gestion de embarcaciones, alertas, zonas e incidentes SAR mediante Data Files YAML.</p>
+</aside>
+
+
+
+    <h2>Equipo</h2>
+    <ul class="team-list">
+      <li>Melvin Yabar Carazas</li>
+      <li>Integrante 2 - editar nombre</li>
+      <li>Integrante 3 - editar nombre</li>
+    </ul>
+
+    <h2>Objetivo del laboratorio</h2>
+    <p>Desarrollar un sitio funcional con Hugo Framework que use archivos YAML como fuente de datos para representar un sistema de gestion de embarcaciones.</p>
+
+    <h2>Tecnologias usadas</h2>
+    <ul>
+      <li>Hugo Framework</li>
+      <li>HTML semantico</li>
+      <li>CSS personalizado</li>
+      <li>JavaScript del lado cliente</li>
+      <li>Data Files YAML</li>
+    </ul>
+  </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>Ingenieria Web - Laboratorio 04</p>
+        <p>Sistema estatico desarrollado con Hugo y Data Files YAML.</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector("[data-nav-toggle]");
+      const links = document.querySelector("[data-nav-links]");
+      if (toggle && links) {
+        toggle.addEventListener("click", () => links.classList.toggle("is-open"));
+      }
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Locale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Menu principal">
+        <a class="brand" href="{{ "/" | relURL }}">Maritime System</a>
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" data-nav-toggle>Menu</button>
+        <ul class="nav-links" data-nav-links>
+          {{ range .Site.Menus.main }}
+            <li><a href="{{ .URL | relURL }}" {{ if $.IsMenuCurrent "main" . }}aria-current="page"{{ end }}>{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>Ingenieria Web - Laboratorio 04</p>
+        <p>Sistema estatico desarrollado con Hugo y Data Files YAML.</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector("[data-nav-toggle]");
+      const links = document.querySelector("[data-nav-links]");
+      if (toggle && links) {
+        toggle.addEventListener("click", () => links.classList.toggle("is-open"));
+      }
+    </script>
+    {{ block "scripts" . }}{{ end }}
+  </body>
+</html>

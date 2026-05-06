@@ -1,0 +1,61 @@
+{{ define "main" }}
+  {{ $paginator := .Paginate .RegularPages 10 }}
+  <section class="page-heading container">
+    <p class="eyebrow">Flota registrada</p>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+  </section>
+
+  <section class="container section">
+    <div class="toolbar">
+      <label for="busqueda">Buscar por nombre o tipo</label>
+      <input id="busqueda" type="search" placeholder="Ejemplo: patrullera, Callao, pesquera" data-search-input>
+    </div>
+
+    <div class="vessel-grid" data-vessel-list>
+      {{ range $paginator.Pages }}
+        {{ $embarcacion := index (where hugo.Data.embarcaciones "id" .Params.embarcacion_id) 0 }}
+        {{ $posicion := index (where hugo.Data.posiciones "embarcacion_id" .Params.embarcacion_id) 0 }}
+        {{ with $embarcacion }}
+        <article class="vessel-card" data-vessel-card data-search-text="{{ lower (printf "%s %s" .nombre .tipo) }}">
+          <div class="card-head">
+            <div>
+              <h2>{{ .nombre }}</h2>
+              <p>{{ .tipo }}</p>
+            </div>
+            <span class="badge state">{{ .estado }}</span>
+          </div>
+          <dl class="details">
+            <div><dt>Bandera</dt><dd>{{ .bandera }}</dd></div>
+            <div><dt>Tripulacion</dt><dd>{{ .caracteristicas.tripulacion }}</dd></div>
+            <div><dt>Fecha</dt><dd>{{ .fecha_creacion }}</dd></div>
+            <div><dt>Puerto base</dt><dd>{{ .caracteristicas.puerto_base }}</dd></div>
+          </dl>
+          {{ with $posicion }}
+            <div class="position-box">
+              <strong>Posicion actual</strong>
+              <p>Lat. {{ .latitud }}, Long. {{ .longitud }}</p>
+              <p>Velocidad {{ .velocidad }} nudos - Rumbo {{ .rumbo }} grados</p>
+              <small>{{ .timestamp }}</small>
+            </div>
+          {{ end }}
+        </article>
+        {{ end }}
+      {{ end }}
+    </div>
+
+    <p class="empty-state" data-empty-state hidden>No se encontraron embarcaciones con ese criterio.</p>
+
+    {{ if gt $paginator.TotalPages 1 }}
+      <nav class="pagination" aria-label="Paginacion de embarcaciones">
+        {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}">Anterior</a>{{ end }}
+        <span>Pagina {{ $paginator.PageNumber }} de {{ $paginator.TotalPages }}</span>
+        {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}">Siguiente</a>{{ end }}
+      </nav>
+    {{ end }}
+  </section>
+{{ end }}
+
+{{ define "scripts" }}
+  <script src="{{ "js/embarcaciones.js" | relURL }}"></script>
+{{ end }}

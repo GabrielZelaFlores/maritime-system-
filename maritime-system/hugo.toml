@@ -1,0 +1,41 @@
+baseURL = "http://localhost:1313/"
+locale = "es-PE"
+defaultContentLanguage = "es"
+title = "Sistema de Gestión de Embarcaciones"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "Plataforma estática para monitoreo marítimo, alertas, zonas e incidentes SAR en el litoral peruano."
+
+[pagination]
+  pagerSize = 10
+
+[[menus.main]]
+  name = "Inicio"
+  pageRef = "/"
+  weight = 10
+
+[[menus.main]]
+  name = "Embarcaciones"
+  pageRef = "/embarcaciones"
+  weight = 20
+
+[[menus.main]]
+  name = "Alertas"
+  pageRef = "/alertas"
+  weight = 30
+
+[[menus.main]]
+  name = "Zonas"
+  pageRef = "/zonas"
+  weight = 40
+
+[[menus.main]]
+  name = "Incidentes SAR"
+  pageRef = "/incidentes"
+  weight = 50
+
+[[menus.main]]
+  name = "Acerca de"
+  pageRef = "/acerca"
+  weight = 60

@@ -1,0 +1,27 @@
+{{ define "main" }}
+  {{ $curso := where hugo.Data.incidentes_sar "estado" "En curso" }}
+  {{ $resueltos := where hugo.Data.incidentes_sar "estado" "Resuelto" }}
+  <section class="page-heading container">
+    <p class="eyebrow">Busqueda y rescate</p>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+  </section>
+
+  <section class="container section">
+    <h2>Incidentes en curso</h2>
+    <div class="record-grid">
+      {{ range $curso }}
+        {{ partial "incidente-card.html" (dict "incidente" . "site" $.Site) }}
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="container section">
+    <h2>Incidentes resueltos</h2>
+    <div class="record-grid">
+      {{ range $resueltos }}
+        {{ partial "incidente-card.html" (dict "incidente" . "site" $.Site) }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
