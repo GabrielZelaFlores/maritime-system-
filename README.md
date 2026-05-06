@@ -1324,4 +1324,4 @@ maritime-system/
 
 ---
 
-**© 2025 Universidad La Salle - Ingeniería de Software**
+**© 2026 Universidad La Salle - Ingeniería de Software**
