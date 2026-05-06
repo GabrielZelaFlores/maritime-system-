@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es-PE">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Plataforma estática para monitoreo marítimo, alertas, zonas e incidentes SAR en el litoral peruano.">
+    <title>Incidentes SAR | Sistema de Gestión de Embarcaciones</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Menu principal">
+        <a class="brand" href="/">Maritime System</a>
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" data-nav-toggle>Menu</button>
+        <ul class="nav-links" data-nav-links>
+          
+            <li><a href="/" >Inicio</a></li>
+          
+            <li><a href="/embarcaciones/" >Embarcaciones</a></li>
+          
+            <li><a href="/alertas/" >Alertas</a></li>
+          
+            <li><a href="/zonas/" >Zonas</a></li>
+          
+            <li><a href="/incidentes/" aria-current="page">Incidentes SAR</a></li>
+          
+            <li><a href="/acerca/" >Acerca de</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      
+  
+  
+  <section class="page-heading container">
+    <p class="eyebrow">Busqueda y rescate</p>
+    <h1>Incidentes SAR</h1>
+    <p>Seguimiento de incidentes de busqueda y rescate.</p>
+  </section>
+
+  <section class="container section">
+    <h2>Incidentes en curso</h2>
+    <div class="record-grid">
+      
+        
+
+<article class="record-card">
+  <div class="card-head">
+    <h3>Auxilio mecanico</h3>
+    <span class="badge state">En curso</span>
+  </div>
+  <p>Embarcacion artesanal sin propulsion a 18 millas nauticas del Callao.</p>
+  <dl class="details compact">
+    <div><dt>Embarcacion</dt><dd>Callao Rescue</dd></div>
+    <div><dt>Inicio</dt><dd>2026-05-05T07:35:00-05:00</dd></div>
+    <div><dt>Fin</dt><dd>Pendiente</dd></div>
+    <div><dt>Personas rescatadas</dt><dd>0</dd></div>
+  </dl>
+  <div class="position-box">
+    <strong>Coordenadas</strong>
+    <p>Lat. -12.2032, Long. -77.3811</p>
+  </div>
+  <h4>Recursos desplegados</h4>
+  <ul class="resource-list">
+    
+      <li>Unidad SAR Callao Rescue</li>
+    
+      <li>Patrullera BAP Rio Pisco</li>
+    
+      <li>Comunicacion VHF canal 16</li>
+    
+  </ul>
+</article>
+
+      
+        
+
+<article class="record-card">
+  <div class="card-head">
+    <h3>Persona al agua</h3>
+    <span class="badge state">En curso</span>
+  </div>
+  <p>Operativo de busqueda cerca de Zorritos tras reporte de caida accidental.</p>
+  <dl class="details compact">
+    <div><dt>Embarcacion</dt><dd>Tumbes Explorer</dd></div>
+    <div><dt>Inicio</dt><dd>2026-05-04T17:10:00-05:00</dd></div>
+    <div><dt>Fin</dt><dd>Pendiente</dd></div>
+    <div><dt>Personas rescatadas</dt><dd>0</dd></div>
+  </dl>
+  <div class="position-box">
+    <strong>Coordenadas</strong>
+    <p>Lat. -3.6698, Long. -80.7793</p>
+  </div>
+  <h4>Recursos desplegados</h4>
+  <ul class="resource-list">
+    
+      <li>Patrulla costera Tumbes</li>
+    
+      <li>Equipo de buzos</li>
+    
+      <li>Apoyo de turismo maritimo local</li>
+    
+  </ul>
+</article>
+
+      
+    </div>
+  </section>
+
+  <section class="container section">
+    <h2>Incidentes resueltos</h2>
+    <div class="record-grid">
+      
+        
+
+<article class="record-card">
+  <div class="card-head">
+    <h3>Evacuacion medica</h3>
+    <span class="badge state">Resuelto</span>
+  </div>
+  <p>Tripulante con lesion en faena frente a San Andres, derivado a puesto de salud.</p>
+  <dl class="details compact">
+    <div><dt>Embarcacion</dt><dd>Nazca Azul</dd></div>
+    <div><dt>Inicio</dt><dd>2026-05-02T11:20:00-05:00</dd></div>
+    <div><dt>Fin</dt><dd>2026-05-02T15:45:00-05:00</dd></div>
+    <div><dt>Personas rescatadas</dt><dd>1</dd></div>
+  </dl>
+  <div class="position-box">
+    <strong>Coordenadas</strong>
+    <p>Lat. -13.7434, Long. -76.5341</p>
+  </div>
+  <h4>Recursos desplegados</h4>
+  <ul class="resource-list">
+    
+      <li>Lancha de capitania</li>
+    
+      <li>Ambulancia Pisco</li>
+    
+      <li>Equipo medico de puerto</li>
+    
+  </ul>
+</article>
+
+      
+    </div>
+  </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>Ingenieria Web - Laboratorio 04</p>
+        <p>Sistema estatico desarrollado con Hugo y Data Files YAML.</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector("[data-nav-toggle]");
+      const links = document.querySelector("[data-nav-links]");
+      if (toggle && links) {
+        toggle.addEventListener("click", () => links.classList.toggle("is-open"));
+      }
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{{ define "main" }}
+  {{ $activas := where hugo.Data.alertas "estado" "Activa" }}
+  {{ $resueltas := where hugo.Data.alertas "estado" "Resuelta" }}
+  <section class="page-heading container">
+    <p class="eyebrow">Gestion de riesgos</p>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+  </section>
+
+  <section class="container section">
+    <h2>Alertas activas</h2>
+    <div class="record-grid">
+      {{ range $activas }}
+        {{ partial "alerta-card.html" (dict "alerta" . "site" $.Site) }}
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="container section">
+    <h2>Alertas resueltas</h2>
+    <div class="record-grid">
+      {{ range $resueltas }}
+        {{ partial "alerta-card.html" (dict "alerta" . "site" $.Site) }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

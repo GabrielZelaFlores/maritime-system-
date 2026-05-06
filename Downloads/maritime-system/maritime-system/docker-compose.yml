@@ -1,0 +1,11 @@
+services:
+  maritime-system:
+    build: .
+    container_name: maritime-system
+    ports:
+      - "1313:1313"
+    volumes:
+      - .:/site
+    working_dir: /site
+    command: server --renderToMemory --disableFastRender --noHTTPCache --bind 0.0.0.0
+
