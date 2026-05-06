@@ -1,92 +1,133 @@
-# Sistema de Gestion de Embarcaciones
+# 🌊 Maritime System
 
-Proyecto del Laboratorio 04 de Ingenieria Web. El sitio fue construido con Hugo Framework sin tema externo y simula un sistema de gestion maritima para embarcaciones, posiciones, zonas, alertas e incidentes SAR del contexto peruano.
+Sistema web marítimo desarrollado con Hugo y ejecutado mediante Docker.
 
-## Estructura de carpetas
+---
 
-```text
-maritime-system/
-|-- content/              # Paginas de seccion del sitio
-|-- data/                 # Data Files YAML usados por los templates
-|-- layouts/              # Layouts Hugo, parciales y shortcodes
-|-- static/css/           # Estilos personalizados
-|-- static/js/            # Busqueda cliente de embarcaciones
-|-- Dockerfile            # Imagen para ejecutar Hugo en contenedor
-|-- docker-compose.yml    # Servicio local para desarrollo
-|-- hugo.toml             # Configuracion principal
-`-- README.md
-```
-
-## Comandos para ejecutar
+## Ejecución rápida
 
 ```bash
-hugo server -D
-hugo
+git clone https://github.com/GabrielZelaFlores/maritime-system-.git
+cd maritime-system
+docker compose up
 ```
 
-El primer comando levanta el servidor local de desarrollo. El segundo genera el sitio estatico en `public/`.
+Luego abrir en el navegador:
 
-## Ejecucion con Docker
+```
+http://localhost:1313
+```
 
-Si no se tiene Hugo instalado en la maquina, se puede ejecutar el sitio con Docker:
+---
+
+## Requisitos
+
+Antes de ejecutar el proyecto, asegúrate de tener instalado:
+
+- Docker Desktop (obligatorio)
+
+## Pasos detallados
+
+### 1. Clonar el repositorio
+
+````
+
+---
+
+### 2. Entrar a la carpeta del proyecto
 
 ```bash
-docker compose up --build
+cd maritime-system
+````
+
+---
+
+### 3. Ejecutar el sistema
+
+Este comando:
+
+- Construye la imagen
+- Inicia el contenedor
+- Levanta el servidor web
+
+---
+
+### 4. Abrir en el navegador
+
+Ir a:
+
+```
+http://localhost:1313
 ```
 
-Luego abrir:
+---
 
-```text
-http://localhost:1313/
+### 5. Detener el sistema
+
+Presionar:
+
+```
+CTRL + C
 ```
 
-Para detener el contenedor:
+o ejecutar en otra terminal:
 
 ```bash
 docker compose down
 ```
 
-Tambien se puede construir y ejecutar la imagen manualmente:
+---
 
-```bash
-docker build -t maritime-system .
-docker run --rm -p 1313:1313 -v "${PWD}:/src" maritime-system
+## Problemas comunes
+
+### Docker no está iniciado
+
+Solución:
+
+- Abrir Docker Desktop
+- Esperar que esté en estado "Running"
+
+---
+
+### El puerto 1313 está en uso
+
+Solución:
+Editar el archivo `docker-compose.yml`:
+
+```yaml
+ports:
+  - "1314:1313"
 ```
 
-## Caracteristicas implementadas
+Luego abrir:
 
-- Menu principal en espanol para Inicio, Embarcaciones, Alertas, Zonas, Incidentes SAR y Acerca de.
-- Pagina de inicio con metricas generales del sistema.
-- Listado de mas de 10 embarcaciones para demostrar paginacion.
-- Posiciones actuales asociadas a cada embarcacion.
-- Separacion de alertas activas y resueltas con badges por prioridad.
-- Visualizacion de zonas maritimas y sus coordenadas.
-- Separacion de incidentes SAR en curso y resueltos.
-- Pagina Acerca de con objetivo, equipo y tecnologias.
-- CSS propio y JavaScript simple del lado cliente.
+```
+http://localhost:1314
+```
 
-## Archivos YAML
+---
 
-- `embarcaciones.yaml`: contiene identificador, nombre, tipo, bandera, estado, fecha y caracteristicas de cada nave.
-- `posiciones.yaml`: contiene ubicacion, velocidad, rumbo y timestamp asociados a cada embarcacion.
-- `zonas.yaml`: define zonas maritimas, tipo, descripcion y lista de coordenadas.
-- `alertas.yaml`: registra alertas por embarcacion, tipo, descripcion, fecha, estado y prioridad.
-- `incidentes_sar.yaml`: modela incidentes de busqueda y rescate con fechas, estado, coordenadas, recursos y personas rescatadas.
+## 🛠️ Tecnologías utilizadas
 
-## Busqueda, paginacion y shortcode
+- Hugo (generador de sitios estáticos)
+- Docker (contenedores)
 
-La busqueda de embarcaciones se ejecuta en el navegador con `static/js/embarcaciones.js`, filtrando las tarjetas visibles por nombre o tipo. La paginacion se implementa con el paginador de Hugo en `layouts/embarcaciones/list.html`, mostrando 10 embarcaciones por pagina.
+---
 
-El shortcode personalizado `layouts/shortcodes/info-card.html` se usa en la pagina Acerca de para mostrar una tarjeta informativa reutilizable.
+## Estructura del proyecto
 
-## Capturas para el informe
+- `content/` → contenido del sitio
+- `layouts/` → vistas
+- `static/` → archivos CSS y JS
+- `hugo.toml` → configuración
 
-- Inicio funcionando.
-- Pagina de embarcaciones.
-- Busqueda por nombre o tipo.
-- Paginacion.
-- Alertas.
-- Zonas.
-- Incidentes SAR.
-- Pagina Acerca de.
-- Commits importantes.
+---
+
+```bash
+docker compose up
+```
+
+```bash
+git clone https://github.com/GabrielZelaFlores/maritime-system-.git
+
+```
